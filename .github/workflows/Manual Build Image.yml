@@ -45,8 +45,8 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm/v7,linux/arm64,linux/s390x
           push: true
           tags: |
-            superng6/singbox:${{ steps.set-version.outputs.version }}
-            superng6/singbox:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/singbox:${{ steps.set-version.outputs.version }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/singbox:latest
           build-args: |
             VERSION=${{ steps.set-version.outputs.version }}
 
@@ -58,8 +58,8 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm/v7,linux/arm64,linux/s390x
           push: true
           tags: |
-            superng6/singbox:${{ steps.set-version.outputs.pre_version }}
-            superng6/singbox:dev
+            ${{ secrets.DOCKERHUB_USERNAME }}/singbox:${{ steps.set-version.outputs.pre_version }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/singbox:dev
           build-args: |
             VERSION=${{ steps.set-version.outputs.pre_version }}
 
